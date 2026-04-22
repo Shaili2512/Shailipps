@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    float rate, amount, discount = 0;
+    int qty;
+
+    printf("Enter rate and quantity: ");
+    scanf("%f %d", &rate, &qty);
+
+    amount = rate * qty;
+
+    // Apply discount based on amount
+    if (amount >= 1001 && amount <= 10000) {
+        discount = amount * 0.05;
+    }
+    else if (amount >= 10001 && amount <= 15000) {
+        discount = amount * 0.07;
+    }
+    else if (amount >= 15001 && amount <= 20000) {
+        discount = amount * 0.09;
+    }
+    else if (amount > 20000) {
+        discount = amount * 0.12;
+    }
+
+    printf("Total Amount = %.2f\n", amount);
+    printf("Discount = %.2f\n", discount);
+    printf("Final Amount = %.2f\n", amount - discount);
+
+    return 0;
+}
