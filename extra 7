@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int num, original;
+
+    int d1, d2, d3, d4, d5;
+
+    printf("Enter a 5-digit number: ");
+    scanf("%d", &num);
+
+    original = num;
+
+    // Extract digits
+    d1 = num / 10000;
+    d2 = (num / 1000) % 10;
+    d3 = (num / 100) % 10;
+    d4 = (num / 10) % 10;
+    d5 = num % 10;
+
+    // Check palindrome
+    if (d1 == d5 && d2 == d4) {
+        printf("It is a Palindrome number.\n");
+    } else {
+        printf("It is not a Palindrome number.\n");
+    }
+
+    return 0;
+}
