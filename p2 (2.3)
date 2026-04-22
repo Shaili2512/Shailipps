@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+int main() {
+    int choice, a, b, c, num, sum = 0, temp;
+
+    do {
+        printf("\n----- MENU -----\n");
+        printf("1. Even or Odd\n");
+        printf("2. Positive or Negative\n");
+        printf("3. Greatest of Three Numbers\n");
+        printf("4. Sum of Digits\n");
+        printf("5. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+
+            case 1:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+
+                if (num % 2 == 0)
+                    printf("Even Number\n");
+                else
+                    printf("Odd Number\n");
+                break;
+
+            case 2:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+
+                if (num >= 0)
+                    printf("Positive Number\n");
+                else
+                    printf("Negative Number\n");
+                break;
+
+            case 3:
+                printf("Enter three numbers: ");
+                scanf("%d %d %d", &a, &b, &c);
+
+                if (a > b && a > c)
+                    printf("Greatest = %d\n", a);
+                else if (b > c)
+                    printf("Greatest = %d\n", b);
+                else
+                    printf("Greatest = %d\n", c);
+                break;
+
+            case 4:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+
+                sum = 0;
+                temp = num;
+
+                while (temp != 0) {
+                    sum = sum + (temp % 10);
+                    temp = temp / 10;
+                }
+
+                printf("Sum of digits = %d\n", sum);
+                break;
+
+            case 5:
+                printf("Exiting program...\n");
+                break;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
